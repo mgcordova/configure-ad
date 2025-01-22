@@ -26,7 +26,6 @@ This tutorial outlines the implementation of Active Directory within Azure Virtu
 - Setup Remote Desktop for non-administrative users on Client-1
 - Create additional users and attempt to log into client-1 with one of the users
 
-<h2>Deployment and Configuration Steps</h2>
 <h2>Set Up The Virtual Machines</h2>
 <p>1). Create a Resource Group for your virtual machines. Search up "Resources Groups" on Azure -> click "Create" -> Fill in the name and create. 
 
