@@ -198,6 +198,8 @@ Set the Destionation Port Ranges to 53 and set Priority to 290.</p>
 
 <p>Log into client-1 with Remote Desktop, ping dc-1's private ip address with a ping.</p>
 
+![image](https://github.com/user-attachments/assets/83f2351d-356c-4426-933f-b2c8a910548d)
+
 <p>Open powershell by searching it through the windows search bar.</p>
 
 ![image](https://github.com/user-attachments/assets/c43ef2c7-5195-4dac-bbbd-f39674ca543e)
