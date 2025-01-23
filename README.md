@@ -211,3 +211,6 @@ Set the Destionation Port Ranges to 53 and set Priority to 290.</p>
 Type ipconfig /all in Powershell.</p>
 
 ![image](https://github.com/user-attachments/assets/aa4d32a3-45b3-48b9-90a4-3b0f8da4e96c)
+
+<hr>
+<h2>Installing Active Directory on The Domain Controller</h2>
