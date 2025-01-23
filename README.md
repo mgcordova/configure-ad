@@ -69,9 +69,9 @@ This tutorial outlines the implementation of Active Directory within Azure Virtu
 
 ![image](https://github.com/user-attachments/assets/1a88ce0f-39ea-4ac7-8f71-659be797c71f)
 
-<p>Now we need to allow traffic on port 53 (DNS) so Client-1 can resolve the domain through dc-1.</p>
+<p>Now we need to allow traffic on port 53 (DNS) so Client-1 can resolve the domain through dc-1 by seting security rules.</p>
 
-<p>Go to the top of the webpage and search "Network Security Groups. This should pop appear and make sure it is not the classic version. Click dc-1-nsg</p>
+<p>Go to the top of the webpage and search "Network Security Groups. This should appear and make sure it is not the classic version. Then you want to click dc-1-nsg</p>
 
 ![image](https://github.com/user-attachments/assets/0d5fd48d-0e32-43a6-bab4-155e1c891f05)
 
@@ -85,11 +85,17 @@ This tutorial outlines the implementation of Active Directory within Azure Virtu
 
 ![image](https://github.com/user-attachments/assets/38fbb728-e4a1-4cf7-9121-a8424d4d5f55)
 
-<p>Click add and add the same rule to Outbound Security Rules.</p>
+<p>Click add and add the same rule to Outbound Security Rules.
+
+Set the Destionation Port Ranges to 53 and set Priority to 290.</p>
 
 ![image](https://github.com/user-attachments/assets/3bb616f1-5900-4c54-80c3-7591b79eaca8)
 
 ![image](https://github.com/user-attachments/assets/d56cd5a6-ac65-428f-aca8-c660f147e369)
+
+<p>Finally, restart dc-1</p>
+
+![image](https://github.com/user-attachments/assets/001ce2dc-cff7-4432-9895-df462095ec47)
 
 <hr>
 <h2>Setup Client-1 in Azure</h2>
@@ -109,6 +115,36 @@ This tutorial outlines the implementation of Active Directory within Azure Virtu
 ![image](https://github.com/user-attachments/assets/77e579f1-5c77-4bd7-a44e-e9a3deb7164e)
 
 <p>Press Review + Create and deploy your virtual machine.</p>
+
+<p>Now we need to allow traffic on port 53 (DNS) so Client-1 can resolve the domain through dc-1 by seting security rules.</p>
+
+<p>Go to the top of the webpage and search "Network Security Groups. This should appear and make sure it is not the classic version. Then you want to click client-1-nsg</p>
+
+![image](https://github.com/user-attachments/assets/8b40ef82-d011-4409-9c11-2a83c351cba3)
+
+<p>Click settings then Inbound Security Rules and click "Add"</p>
+
+![image](https://github.com/user-attachments/assets/a16d0868-c08b-45bf-b296-931b1ce8adb0)
+
+<p>Set Destination Port Ranges to 53 and set Priority to 290.</p>
+
+![image](https://github.com/user-attachments/assets/bb6660d9-b6a7-4373-8d8b-ed7a38568d69)
+
+![image](https://github.com/user-attachments/assets/090a3ea1-24d5-4045-97aa-4b222aa14e6c)
+
+<p>Click add and add the same rule to Outbound Security Rules.
+
+Set the Destionation Port Ranges to 53 and set Priority to 290.</p>
+
+![image](https://github.com/user-attachments/assets/c351dd21-3f6d-4477-8123-129238ab5d64)
+
+![image](https://github.com/user-attachments/assets/bb6660d9-b6a7-4373-8d8b-ed7a38568d69)
+
+![image](https://github.com/user-attachments/assets/090a3ea1-24d5-4045-97aa-4b222aa14e6c)
+
+<p>Finally, restart client-1</p>
+
+![image](https://github.com/user-attachments/assets/e7e306a3-e687-42a8-a6ef-1c2c066625ed)
 
 <hr>
 <h2>Set Client-1’s DNS settings to DC-1’s Private IP address</h2>
