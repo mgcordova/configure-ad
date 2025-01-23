@@ -393,3 +393,5 @@ Normally you’d want to do this with Group Policy that allows you to change MAN
 Now that we're finished, make sure to CLEAN UP YOUR AZURE ENVIRONMENT to avoid any unnecessary charges.
 
 Remember to close your Remote Desktop connection, delete the Resource Group(s) you created at the start of the tutorial, and verify that the Resource Group has been successfully deleted.</p>
+
+<hr>
