@@ -99,6 +99,30 @@ Set the Destionation Port Ranges to 53 and set Priority to 290.</p>
 
 <p>Next, we want to log into dc-1 using the public ip address and disable Windows Firewall for testing connectivity.</p>
 
+![image](https://github.com/user-attachments/assets/a679a5b4-bddd-44e6-a46c-ffb250f9f5a2)
+
+<p>When you log into the virtual machine, the program server manager should automatically start up. This means you set up the dc-1 viritual machine correctly. </p>
+
+<p>Go the windows search bar, right click the windows logo and click run or press Windows+R at the same time. You will want to search up "wf.msc" which opens up Windows Firewall.</p>
+
+![image](https://github.com/user-attachments/assets/a42968a0-7383-40a6-82fe-a60b8bfc0d5e)
+
+<p>Click on "Windows Defender Firewall Properties"</p>
+
+![image](https://github.com/user-attachments/assets/22756266-b784-439c-8e57-a6f3d2fb7c97)
+
+<p>Set the Firewall State to off and click apply./p>
+
+![image](https://github.com/user-attachments/assets/8ea89452-edfb-4fa0-895d-29a9fba1a16c)
+
+<p>You will want to do this for the Private profile and Public profile.</p>
+
+![image](https://github.com/user-attachments/assets/4a1cdb33-e7ae-4507-960e-780bbb6c5b01)
+
+![image](https://github.com/user-attachments/assets/879696f6-a235-4782-a645-fb61230dba14)
+
+<p>You have now set up the Domain Controller for this lab.</p>
+
 <hr>
 <h2>Setup Client-1 in Azure</h2>
 
