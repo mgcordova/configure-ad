@@ -1,4 +1,4 @@
-<p align="center">
+![image](https://github.com/user-attachments/assets/e320277c-db61-4b47-aa5c-618088f89161)<p align="center">
 <img src="https://i.imgur.com/pU5A58S.png" alt="Microsoft Active Directory Logo"/>
 </p>
 
@@ -97,10 +97,12 @@ Set the Destionation Port Ranges to 53 and set Priority to 290.</p>
 
 ![image](https://github.com/user-attachments/assets/001ce2dc-cff7-4432-9895-df462095ec47)
 
+<p>Next, we want to log into dc-1 using the public ip address and disable Windows Firewall for testing connectivity.</p>
+
 <hr>
 <h2>Setup Client-1 in Azure</h2>
 
-<p>Search up "Virtual Machines" on Azure -> click "Create" -> Fill in the name, Set the resource group, set the image to Windows 10, set the size to 2 VCPUs, and set the admin login.
+<p>4). Search up "Virtual Machines" on Azure -> click "Create" -> Fill in the name, Set the resource group, set the image to Windows 10, set the size to 2 VCPUs, and set the admin login.
 
 <b>Make sure that this machine is in same region and virtual network as the domain controller</b></p>
 
@@ -149,4 +151,16 @@ Set the Destionation Port Ranges to 53 and set Priority to 290.</p>
 <hr>
 <h2>Set Client-1’s DNS settings to DC-1’s Private IP address</h2>
 
-<p></p>
+<p>5). Go to Virtual Machines and select client-1</p>
+
+![image](https://github.com/user-attachments/assets/4b6fb63b-bccf-4e98-b62c-4a8ee9c47ed1)
+
+<p>Click Networking then click Network settings and then click Network Interface Configuration.</p>
+
+![image](https://github.com/user-attachments/assets/20834834-e5e4-4283-b9d1-229d89dda3c2)
+
+<p>Click Settings then click DNS servers and set the server to the private ip of dc-1. [The private ip can be found by clicking dc-1 and reading the system information of dc-1. Finally, save your changes.</p>
+
+![image](https://github.com/user-attachments/assets/2c574e98-8659-4933-a1f0-aa9cb99ba00f)
+
+<hr>
