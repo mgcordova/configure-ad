@@ -191,4 +191,23 @@ Set the Destionation Port Ranges to 53 and set Priority to 290.</p>
 
 ![image](https://github.com/user-attachments/assets/e7e306a3-e687-42a8-a6ef-1c2c066625ed)
 
+<p>Now, you have set up the client-1 virtual machine.</p>
+
 <hr>
+<h2>Ensuring Connectivity between the Client and Domain Controller</h2>
+
+<p>Log into client-1 with Remote Desktop, ping dc-1's private ip address with a ping.</p>
+
+<p>Open powershell by searching it through the windows search bar.</p>
+
+![image](https://github.com/user-attachments/assets/c43ef2c7-5195-4dac-bbbd-f39674ca543e)
+
+<p>Type ping [private ip of dc-1] in Powershell. If it looks like the image below that means your ping succeeded.</p>
+
+![image](https://github.com/user-attachments/assets/80582f88-9f25-4c55-98c9-cf44a555acc5)
+
+<p>Next, check the DNS server of the client-1 vm and it should show DC-1's private IP address.
+
+Type ipconfig /all in Powershell.</p>
+
+![image](https://github.com/user-attachments/assets/aa4d32a3-45b3-48b9-90a4-3b0f8da4e96c)
