@@ -18,7 +18,7 @@ This tutorial outlines the implementation of Active Directory within Azure Virtu
 
 <h2>High-Level Deployment and Configuration Steps</h2>
 
-- Set up the virtual machines
+- Set up the Domain Controller and Client
 - Ensure Connectivity between the Client and Domain Controller
 - Install Active Directory
 - Create an Admin and Normal User Account in AD
@@ -26,7 +26,7 @@ This tutorial outlines the implementation of Active Directory within Azure Virtu
 - Setup Remote Desktop for non-administrative users on Client-1
 - Create additional users and attempt to log into client-1 with one of the users
 
-<h2>Set Up The Virtual Machines</h2>
+<h2>Setup Domain Controller in Azure</h2>
 <p>1). Create a Resource Group for your virtual machines. Search up "Resources Groups" on Azure -> click "Create" -> Fill in the name and create. 
 
 <b>Make sure to keep the resource group, vm, and virtual network on the same server.</b></p>
@@ -56,3 +56,61 @@ This tutorial outlines the implementation of Active Directory within Azure Virtu
 ![image](https://github.com/user-attachments/assets/1e46241f-d2a5-48a7-9f1f-a59c36a0393f)
 
 <p>Press Review + Create and deploy your virtual machine.</p>
+
+<p>Go to virtual machines, click dc-1, click network settings on the left, click the network interface configuration.</p>
+
+![image](https://github.com/user-attachments/assets/b62a016b-642e-4d05-b54f-d0967d4458e8)
+
+![image](https://github.com/user-attachments/assets/4d069397-3ce5-466b-803d-36fe0a821435)
+
+<p>Click on the ipconfig1 file and set the private ip address to static and save.</p>
+
+![image](https://github.com/user-attachments/assets/cac97095-b5a0-47d7-ba2f-2b5804a8aab1)
+
+![image](https://github.com/user-attachments/assets/1a88ce0f-39ea-4ac7-8f71-659be797c71f)
+
+<p>Now we need to allow traffic on port 53 (DNS) so Client-1 can resolve the domain through dc-1.</p>
+
+<p>Go to the top of the webpage and search "Network Security Groups. This should pop appear and make sure it is not the classic version. Click dc-1-nsg</p>
+
+![image](https://github.com/user-attachments/assets/0d5fd48d-0e32-43a6-bab4-155e1c891f05)
+
+<p>Click settings then Inbound Security Rules and click "Add"</p>
+
+![image](https://github.com/user-attachments/assets/0b1fc4a2-95d5-4ee7-9f29-ef70b4670fb0)
+
+<p>Set Destination Port Ranges to 53 and set Priority to 290.</p>
+
+![image](https://github.com/user-attachments/assets/76100c8c-41f7-4560-ac90-809b6a0ae91f)
+
+![image](https://github.com/user-attachments/assets/38fbb728-e4a1-4cf7-9121-a8424d4d5f55)
+
+<p>Click add and add the same rule to Outbound Security Rules.</p>
+
+![image](https://github.com/user-attachments/assets/3bb616f1-5900-4c54-80c3-7591b79eaca8)
+
+![image](https://github.com/user-attachments/assets/d56cd5a6-ac65-428f-aca8-c660f147e369)
+
+<hr>
+<h2>Setup Client-1 in Azure</h2>
+
+<p>Search up "Virtual Machines" on Azure -> click "Create" -> Fill in the name, Set the resource group, set the image to Windows 10, set the size to 2 VCPUs, and set the admin login.
+
+<b>Make sure that this machine is in same region and virtual network as the domain controller</b></p>
+
+![image](https://github.com/user-attachments/assets/d423d1d4-9cb1-45f2-853f-40a43c498c61)
+
+![image](https://github.com/user-attachments/assets/860ef986-7e0f-41e3-bd02-1f7db99e5ee7)
+
+![image](https://github.com/user-attachments/assets/9351f51c-4d72-4e8f-aef1-c78ea268ee68)
+
+<p>Head to Networking section of the virtual machines configuration and make sure the vm is in the virtual network we made earlier.</p>
+
+![image](https://github.com/user-attachments/assets/77e579f1-5c77-4bd7-a44e-e9a3deb7164e)
+
+<p>Press Review + Create and deploy your virtual machine.</p>
+
+<hr>
+<h2>Set Client-1’s DNS settings to DC-1’s Private IP address</h2>
+
+<p></p>
