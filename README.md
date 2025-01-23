@@ -10,6 +10,7 @@ This tutorial outlines the implementation of Active Directory within Azure Virtu
 - Remote Desktop
 - Active Directory Domain Services
 - PowerShell
+- Script to Generate Names and Users https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1
 
 <h2>Operating Systems Used </h2>
 
@@ -216,3 +217,101 @@ Type ipconfig /all in Powershell.</p>
 
 <hr>
 <h2>Installing Active Directory on The Domain Controller</h2>
+
+<p>Log into dc-1 through Remote Desktop.</p>
+
+![image](https://github.com/user-attachments/assets/83f2351d-356c-4426-933f-b2c8a910548d)
+
+<p>Open the Server Manager and select "Add Roles and Features". Continue through the set up installation </p>
+
+![image](https://github.com/user-attachments/assets/91cce698-f287-40e4-9df8-265277c2a241)
+
+<p>Continue by pressing next and make sure the server selected is dc-1.</p>
+
+![image](https://github.com/user-attachments/assets/6ed55f4d-41a7-46f2-8aac-ffffc3a51a20)
+
+![image](https://github.com/user-attachments/assets/78b9369e-8267-4f15-b285-1e3a5a1f6fcd)
+
+<p>In the Server Roles section make sure you install Active Directory Domain Services</p>
+
+![image](https://github.com/user-attachments/assets/0a98d97d-4e12-40f5-8995-5c694e3ced44)
+
+<p>Continue with the installation</p>
+
+![image](https://github.com/user-attachments/assets/fcf6ca67-524c-4ac2-8f77-e173c2649284)
+
+<p>Next we want to promote the vm to a domain controller. Click the flag on the top right and select "Promote this server to a domain controller."</p>
+
+![image](https://github.com/user-attachments/assets/6e0960e0-a4b6-489d-9f31-a4419d3d402d)
+
+<p>Now, we want to set up a new forest and for this example we will set it as mydomain.com
+
+After filling out the domain name continue with the installation process.</p>
+
+![image](https://github.com/user-attachments/assets/9e89ad75-e023-4005-931d-b5bfa4c3faee)
+
+<p>Set the password to "Password1" for this lab.</p>
+
+![image](https://github.com/user-attachments/assets/d48a48f3-0d78-4215-949e-3009faea0d62)
+
+<p>Make sure that "Create DNS Delegation" is unchecked.</p>
+
+![image](https://github.com/user-attachments/assets/e3ff62c5-5c6f-4674-aae0-18fec78e4d85)
+
+<p>Continue pressing next as there is nothing left to configure then press install. 
+
+Your VM should restart on its own once it is done installing. </p>
+
+![image](https://github.com/user-attachments/assets/3ece1a53-2b65-437d-8d80-4c8e954e0e1d)
+
+<p>Now, we want to log in back into the dc-1, but now we have to use the domain whilst logging in. So it recognizes us as a domain user.</p>
+
+![image](https://github.com/user-attachments/assets/ddb23e09-7e05-4eae-a845-cacd554c1566)
+
+<hr>
+<h2>Creating an Admin and Normal User Account in Active Directory</h2>
+
+<p>6). Go on the Windows search bar and search "Active Directory Users and Computers"</p>
+
+![image](https://github.com/user-attachments/assets/00f9889a-f753-4219-a844-f84599699a59)
+
+<p>Next, right click "mydomain.com" and create an Organizational Unit (OU) called “_EMPLOYEES”</p>
+
+<p>Create another OU called "_ADMINS" as well.</p>
+
+![image](https://github.com/user-attachments/assets/fb031d5b-77fb-4cef-aaaf-746132b3a407)
+
+![image](https://github.com/user-attachments/assets/e584fdde-4209-43b6-8527-66052332e153)
+
+<p>in the "_ADMINS" OU create a user called "Jane Doe" with the username of jane_admin and passsword Cyberlab123!</p>
+
+![image](https://github.com/user-attachments/assets/aefc4884-3378-4151-a874-a01c0a0ee318)
+
+![image](https://github.com/user-attachments/assets/63e6c752-8b5d-47d9-b30d-529de6ee89c2)
+
+![image](https://github.com/user-attachments/assets/a32d737c-7694-42b4-a529-8f0e385067fa)
+
+<p>Right click Jane Doe and select Properties </p>
+
+![image](https://github.com/user-attachments/assets/a34ad367-5437-4af6-b5e5-3e898d9b62ac)
+
+<p>Click the Member Of tab and click Add.</p>
+
+![image](https://github.com/user-attachments/assets/44fd49f9-6009-40ad-b228-b7f973d0ed2e)
+
+<p>Type Domain Admins in the objects, click check names, click ok, and apply.</p>
+
+![image](https://github.com/user-attachments/assets/c661874c-cd02-4394-9d79-67c24a919739)
+
+![image](https://github.com/user-attachments/assets/0d1e7861-7ca1-4798-aa92-6aa9b4ed5207)
+
+<p>Now we want to close the remote desktop connection and log into dc-1 as Jane Doe. We will be using this admin account from now on.
+
+The login details should be mydomain.com\jane_admin and password Cyberlab123!</p>
+
+![{6A73ED15-633A-43E3-863B-C2C9AB187C44}](https://github.com/user-attachments/assets/0aef8ef9-01c4-429c-a6cb-2c84b9afe5bc)
+
+<hr>
+<h2>Joining Client-1 to your domain (mydomain)</h2>
+
+<p></p>
