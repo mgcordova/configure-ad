@@ -388,7 +388,7 @@ Normally you’d want to do this with Group Policy that allows you to change MAN
 
 <hr>
 
-<p>I hope this tutorial helped you gain a better understanding of network security protocols and how to monitor traffic between virtual machines. This can be done easily on both PC and Mac, with the only extra step on Mac being the download of the Remote Desktop App.
+<p>I hope this tutorial helped you gain a better understanding of active directory. This can be done easily on both PC and Mac, with the only extra step on Mac being the download of the Remote Desktop App.
 
 Now that we're finished, make sure to CLEAN UP YOUR AZURE ENVIRONMENT to avoid any unnecessary charges.
 
