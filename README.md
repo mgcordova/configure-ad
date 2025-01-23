@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/e320277c-db61-4b47-aa5c-618088f89161)<p align="center">
+<p align="center">
 <img src="https://i.imgur.com/pU5A58S.png" alt="Microsoft Active Directory Logo"/>
 </p>
 
@@ -159,8 +159,12 @@ Set the Destionation Port Ranges to 53 and set Priority to 290.</p>
 
 ![image](https://github.com/user-attachments/assets/20834834-e5e4-4283-b9d1-229d89dda3c2)
 
-<p>Click Settings then click DNS servers and set the server to the private ip of dc-1. [The private ip can be found by clicking dc-1 and reading the system information of dc-1. Finally, save your changes.</p>
+<p>Click Settings then click DNS servers and set the server to the private ip of dc-1. [The private ip can be found by clicking dc-1 and reading the system information of dc-1. Save your changes.</p>
 
 ![image](https://github.com/user-attachments/assets/2c574e98-8659-4933-a1f0-aa9cb99ba00f)
+
+<p>Finally, restart client-1</p>
+
+![image](https://github.com/user-attachments/assets/e7e306a3-e687-42a8-a6ef-1c2c066625ed)
 
 <hr>
