@@ -314,4 +314,47 @@ The login details should be mydomain.com\jane_admin and password Cyberlab123!</p
 <hr>
 <h2>Joining Client-1 to your domain (mydomain)</h2>
 
-<p></p>
+<p>Log into client-1 through Remote Desktop and search in the Windows search bar "About your PC"</p>
+
+![image](https://github.com/user-attachments/assets/8bc6d72d-c7d1-49f2-a138-3917f5d3ad22)
+
+<p>Click Advanced System Settings on the right, then the Computer Name tab, click change Domain </p>
+
+![image](https://github.com/user-attachments/assets/eb96ca03-3e48-4a29-832a-72c5639e2260)
+
+![image](https://github.com/user-attachments/assets/762c06ab-29f4-4ff3-86bd-588b45935ed5)
+
+<p>Click ok and it'll ask for a user that is apart of the domain to log in. We'll use Jane's admin account. After successfully logging and closing everything the VM will restart on its own.</p>
+
+![image](https://github.com/user-attachments/assets/4c2d65db-9ea2-4a17-98d3-8a4d53a7a2c5)
+
+![image](https://github.com/user-attachments/assets/f6965825-4ba8-4fc1-9d84-97771efd0abc)
+
+<p>Log into the Domain Controller through Remote Desktop and verify Client-1 shows up in the Active Directory Users and Computers (ADUC) inside the "Computers" OU of the domain.</p>
+
+<p>Create a new OU named "_CLIENTS" and drag Client-1 into the newly created OU.</p>
+
+![image](https://github.com/user-attachments/assets/b4f8d378-eda2-4404-b12a-17f80ddbd1b6)
+
+![image](https://github.com/user-attachments/assets/bedcdf98-66d1-4dac-86d0-49d2bd5e7011)
+
+<hr>
+<h2>Setting up Remote Desktop for non-administrative users on Client-1</h2>
+
+<p>Log into Client-1 as mydomain.com\jane_admin and open system by searching for it in the Windows search bar.
+
+Click “Remote Desktop”.</p>
+
+![image](https://github.com/user-attachments/assets/c53a79af-4e8b-4a40-809f-9a62bfefc1f7)
+
+<p>Click "Select users that can remotely access this PC" at the bottom and add Domain Users.</p>
+
+![image](https://github.com/user-attachments/assets/0924a45b-17db-4d8d-b23c-96205f032df5)
+
+![image](https://github.com/user-attachments/assets/edfea038-03c4-46c5-b175-9e8135736d88)
+
+<p>You can now log into Client-1 as a normal, non-administrative user now.
+
+Normally you’d want to do this with Group Policy that allows you to change MANY systems at once</p>
+
+<hr>
