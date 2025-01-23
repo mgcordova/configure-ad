@@ -358,3 +358,34 @@ Click “Remote Desktop”.</p>
 Normally you’d want to do this with Group Policy that allows you to change MANY systems at once</p>
 
 <hr>
+<h2>Create Additional Users With A Script and Attempt To Log Into Client-1 With One of The Users</h2>
+
+<p>Log in to dc-1 as jane_admin and run Powershell ISE as Administrator.</p>
+
+![image](https://github.com/user-attachments/assets/28115754-230b-4af7-a60c-3bcedbd1c913)
+
+<p>Create a file in Powershell and paste the contents of the script into it. Then save it as a file on your desktop named "script".</p>
+
+![image](https://github.com/user-attachments/assets/31b9d277-5de9-4614-ab54-35f12513a38d)
+
+![image](https://github.com/user-attachments/assets/5238ee75-9dcb-4b1c-a693-c14a9cd1210e)
+
+<p>We can now run the script (https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1) and observe it create users into the AD.</p>
+
+![image](https://github.com/user-attachments/assets/bd4f8b02-6d98-4998-9e1d-c62aa0e2368b)
+
+![image](https://github.com/user-attachments/assets/0151bda1-2e27-4270-90c4-352145eb99d1)
+
+<p>After a few minutes you can stop the script and note down a random account of your choosing name and the password should be Password1</p>
+
+![image](https://github.com/user-attachments/assets/b50c322f-cf5f-4ba8-85cf-a8c2c95522bb)
+
+<p>Now, attempt to log into client-1 with one of the random accounts.</p>
+
+![{8734E86E-3975-4A0F-9C83-562A5CEECB0D}](https://github.com/user-attachments/assets/4744e5f4-6a9d-41c3-8572-9b6e54abb929)
+
+![{353496B2-4448-400D-80AB-2743A570E3A2}](https://github.com/user-attachments/assets/72160010-5d4e-4163-9975-e133c61d62af)
+
+<hr>
+
+
